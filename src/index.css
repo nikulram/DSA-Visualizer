@@ -1,0 +1,658 @@
+@import "tailwindcss";
+
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #172033;
+  background: #f6f8fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #f6f8fc;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(56, 189, 248, 0.28), transparent 28%),
+    radial-gradient(circle at 88% 12%, rgba(129, 140, 248, 0.22), transparent 30%),
+    radial-gradient(circle at 50% 92%, rgba(45, 212, 191, 0.16), transparent 34%),
+    linear-gradient(135deg, #f8fbff 0%, #f2f6ff 44%, #f8fafc 100%);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+select {
+  color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+
+
+
+
+/* ---- Clean transparent portfolio overlay theme ---- */
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Arial, sans-serif;
+  color: #0b1220;
+  background: transparent;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  background: transparent !important;
+}
+
+body {
+  margin: 0;
+  background: transparent !important;
+  color: #0b1220;
+}
+
+body::before {
+  display: none !important;
+}
+
+h1,
+h2,
+h3 {
+  color: #0b1220;
+  letter-spacing: -0.045em;
+}
+
+/* Main brand title */
+.nr-brand-title {
+  font-size: clamp(3.1rem, 5vw, 5.45rem) !important;
+  line-height: 0.96 !important;
+  letter-spacing: -0.075em !important;
+  font-weight: 800 !important;
+  color: #0b1220 !important;
+  max-width: 760px;
+}
+
+.nr-brand-by {
+  display: inline;
+  color: #0b1220 !important;
+  font-weight: 800 !important;
+}
+
+.nr-brand-accent {
+  color: #f26522 !important;
+}
+
+/* Glass but not milky/childish */
+.nr-hero-shell,
+.nr-glass,
+.nr-soft-card {
+  background: rgba(255, 255, 255, 0.56) !important;
+  border: 1px solid rgba(255, 255, 255, 0.70) !important;
+  box-shadow:
+    0 24px 72px rgba(15, 23, 42, 0.07),
+    0 8px 24px rgba(15, 23, 42, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(18px) saturate(1.05);
+  -webkit-backdrop-filter: blur(18px) saturate(1.05);
+}
+
+.nr-hero-shell::before {
+  display: none !important;
+}
+
+/* Better muted text */
+.text-slate-500,
+.text-slate-600,
+.nr-muted {
+  color: #667085 !important;
+}
+
+/* Keep orange minimal */
+.nr-accent-orange {
+  color: #f26522 !important;
+}
+
+/* Buttons */
+.nr-pill-dark,
+.bg-\[\#0f172a\],
+.bg-slate-950 {
+  background: #0b1220 !important;
+  color: #ffffff !important;
+}
+
+
+/* Search input */
+input,
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.62) !important;
+  border-color: rgba(226, 232, 240, 0.86) !important;
+  color: #0b1220 !important;
+}
+
+input::placeholder {
+  color: #98a2b3 !important;
+}
+
+/* Stat cards */
+.nr-soft-card,
+[class*="rounded-2xl"][class*="border-slate-200"] {
+  border-color: rgba(226,232,240,0.82) !important;
+}
+
+/* Remove over-spaced harsh labels slightly */
+[class*="tracking-[0.30em]"],
+[class*="tracking-[0.28em]"],
+[class*="tracking-[0.22em]"] {
+  letter-spacing: 0.18em !important;
+}
+
+
+
+/* ---- DSA responsive overlay fixes ---- */
+html,
+body,
+#root {
+  background: transparent !important;
+}
+
+body {
+  background: transparent !important;
+  overflow-x: hidden;
+}
+
+body::before {
+  display: none !important;
+}
+
+#root {
+  width: 100%;
+}
+
+.nr-hero-shell,
+.nr-glass,
+.nr-soft-card {
+  background: rgba(255, 255, 255, 0.56) !important;
+  backdrop-filter: blur(18px) saturate(1.05);
+  -webkit-backdrop-filter: blur(18px) saturate(1.05);
+}
+
+@media (max-width: 900px) {
+  .nr-brand-title {
+    font-size: clamp(2.25rem, 12vw, 3.8rem) !important;
+    line-height: 0.98 !important;
+    max-width: 100% !important;
+  }
+
+  .nr-hero-shell,
+  .nr-glass,
+  .nr-soft-card {
+    border-radius: 26px !important;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .nr-brand-title {
+    font-size: clamp(2.1rem, 13vw, 3.2rem) !important;
+    letter-spacing: -0.065em !important;
+  }
+
+  .nr-algorithm-card h3 {
+    font-size: 1rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .nr-algorithm-card {
+  display: flex !important;
+  position: relative !important;
+  z-index: 1 !important;
+  min-height: 132px !important;
+  height: 132px !important;
+  max-height: 132px !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  overflow: hidden !important;
+  border-radius: 1.35rem !important;
+  padding: 0.95rem !important;
+  text-align: left !important;
+  background: rgba(255,255,255,0.64) !important;
+  border-color: rgba(226,232,240,0.82) !important;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.045) !important;
+}
+}
+
+
+html,
+body,
+#root {
+  min-height: 100%;
+  width: 100%;
+  background: #efefef;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+}
+
+.site-shader-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  min-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
+  pointer-events: none;
+  background: #efefef;
+}
+
+.site-app-shell {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+}
+
+@supports (height: 100svh) {
+  body,
+  .site-shader-bg,
+  .site-app-shell {
+    min-height: 100svh;
+  }
+
+  .site-shader-bg {
+    height: 100svh;
+  }
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  width: 100%;
+  background: #efefef;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+}
+
+.site-shader-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  min-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
+  pointer-events: none;
+  background: #efefef;
+}
+
+.site-app-shell {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+}
+
+@supports (height: 100svh) {
+  body,
+  .site-shader-bg,
+  .site-app-shell {
+    min-height: 100svh;
+  }
+
+  .site-shader-bg {
+    height: 100svh;
+  }
+}
+
+/* Final hosted background override - keep app surface transparent so portfolio shader shows */
+html,
+body,
+#root {
+  background: transparent !important;
+}
+
+body {
+  background: transparent !important;
+}
+
+.site-app-shell {
+  background: transparent !important;
+}
+
+.site-app-shell > * {
+  background: transparent !important;
+}
+
+.app,
+.App,
+#app {
+  background: transparent !important;
+}
+
+.site-shader-bg {
+  background: #efefef !important;
+}
+
+/* Hosted background integration - safe layout version */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  background: transparent !important;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: transparent !important;
+}
+
+.site-shader-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  min-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
+  pointer-events: none;
+  background: #efefef;
+}
+
+.site-app-shell {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+  background: transparent !important;
+}
+
+/* Keep actual app layout/card sizing intact */
+.site-app-shell > main,
+.site-app-shell > div,
+.site-app-shell > section {
+  position: relative;
+}
+
+/* Mobile Safari viewport fix */
+@supports (height: 100svh) {
+  body,
+  .site-app-shell {
+    min-height: 100svh;
+  }
+
+  .site-shader-bg {
+    min-height: 100svh;
+    height: 100svh;
+  }
+}
+
+
+/* Keep DSA Visualizer desktop layout boxed with internal catalog scroll */
+@media (min-width: 1024px) {
+  body {
+    overflow: hidden !important;
+  }
+
+  .site-app-shell {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .site-app-shell main,
+  .site-app-shell section {
+    max-height: 100dvh;
+  }
+
+  .site-app-shell .nr-glass {
+    scrollbar-width: thin;
+  }
+
+  .site-app-shell .nr-glass:has(input) {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100dvh - 7rem);
+    overflow: hidden;
+  }
+
+  .site-app-shell .nr-glass:has(input) > div:last-child {
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 0.25rem;
+  }
+}
+
+@media (max-width: 1023px) {
+  body {
+    overflow-y: auto !important;
+  }
+
+  .site-app-shell {
+    min-height: 100dvh;
+    overflow: visible;
+  }
+}
+
+
+.nr-catalog-section {
+  display: block;
+  position: relative;
+  isolation: isolate;
+  margin-bottom: 36px;
+  padding-bottom: 4px;
+}
+
+.nr-catalog-section:last-child {
+  margin-bottom: 0;
+}
+
+.nr-catalog-heading {
+  display: block;
+  position: relative;
+  z-index: 2;
+  margin: 0 0 14px;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: #667085;
+  line-height: 1.2;
+  clear: both;
+}
+
+.nr-catalog-grid {
+  display: grid;
+  position: relative;
+  z-index: 1;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 132px;
+  gap: 18px 18px;
+  align-items: stretch;
+  overflow: visible;
+}
+
+.nr-algorithm-card {
+  display: flex !important;
+  position: relative !important;
+  z-index: 1 !important;
+  min-height: 118px !important;
+  height: 100% !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  overflow: hidden !important;
+  border-radius: 1.35rem !important;
+  padding: 0.95rem !important;
+  text-align: left !important;
+  background: rgba(255,255,255,0.64) !important;
+  border-color: rgba(226,232,240,0.82) !important;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.045) !important;
+}
+
+.nr-algorithm-card:hover {
+  transform: none !important;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.075) !important;
+}
+
+.nr-algorithm-card h3 {
+  font-weight: 760 !important;
+  color: #0b1220 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.nr-algorithm-card > div > p:first-child {
+  color: #667085 !important;
+  letter-spacing: 0.16em !important;
+}
+
+.nr-card-action {
+  width: fit-content !important;
+  margin-top: 0.7rem !important;
+  background: rgba(255,255,255,0.72) !important;
+  color: #0b1220 !important;
+  border: 1px solid rgba(226,232,240,0.95) !important;
+  box-shadow: none !important;
+  line-height: 1 !important;
+}
+
+.nr-algorithm-card:hover .nr-card-action {
+  background: #0b1220 !important;
+  color: white !important;
+}
+
+@media (min-width: 640px) {
+  .nr-catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .nr-catalog-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1536px) {
+  .nr-catalog-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .nr-algorithm-card {
+    min-height: 122px !important;
+    height: 122px !important;
+    max-height: 122px !important;
+    padding: 0.85rem !important;
+  }
+}
+
+
+/* ---- Single master catalog grid fix ---- */
+.nr-catalog-master-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 18px;
+  align-items: stretch;
+  overflow: visible;
+}
+
+.nr-catalog-heading-row {
+  grid-column: 1 / -1;
+  display: block;
+  margin: 10px 0 -2px;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  line-height: 1.2;
+  color: #667085;
+}
+
+.nr-catalog-heading-row:first-child {
+  margin-top: 0;
+}
+
+.nr-catalog-heading-row:not(:first-child) {
+  margin-top: 30px;
+}
+
+.nr-catalog-master-grid .nr-algorithm-card {
+  min-height: 132px !important;
+  height: 132px !important;
+  max-height: 132px !important;
+  align-self: stretch !important;
+}
+
+.nr-catalog-master-grid .nr-card-action {
+  margin-top: 0.7rem !important;
+}
+
+@media (min-width: 640px) {
+  .nr-catalog-master-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .nr-catalog-master-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1536px) {
+  .nr-catalog-master-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .nr-catalog-master-grid .nr-algorithm-card {
+    min-height: 122px !important;
+    height: 122px !important;
+    max-height: 122px !important;
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "project": {
+    "name": "dsa-visualizer",
+    "license": "MIT"
+  },
+  "runtimeDependencies": {
+    "react": {
+      "version": "19.2.6",
+      "license": "MIT",
+      "homepage": "https://react.dev/",
+      "repository": "https://github.com/facebook/react.git"
+    },
+    "react-dom": {
+      "version": "19.2.6",
+      "license": "MIT",
+      "homepage": "https://react.dev/",
+      "repository": "https://github.com/facebook/react.git"
+    },
+    "clsx": {
+      "version": "2.1.1",
+      "license": "MIT",
+      "repository": "lukeed/clsx"
+    },
+    "framer-motion": {
+      "version": "12.40.0",
+      "license": "MIT",
+      "repository": "https://github.com/motiondivision/motion/"
+    },
+    "lucide-react": {
+      "version": "1.17.0",
+      "license": "ISC",
+      "homepage": "https://lucide.dev",
+      "repository": "https://github.com/lucide-icons/lucide.git"
+    },
+    "shaders": {
+      "version": "2.5.128",
+      "license": "SEE PACKAGE LICENSE",
+      "homepage": "https://shaders.com/"
+    }
+  },
+  "notes": "This JSON intentionally excludes local machine paths, node_modules paths, and generated absolute filesystem paths."
+}
