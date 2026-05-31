@@ -1,0 +1,44 @@
+name: Deploy to DreamHost
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Check
+        run: npm run check
+
+      - name: Build
+        run: npm run build
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DREAMHOST_SSH_KEY }}" > ~/.ssh/dreamhost_key
+          chmod 600 ~/.ssh/dreamhost_key
+          ssh-keyscan -p 22 "${{ secrets.DREAMHOST_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Ensure deploy folder exists
+        run: |
+          ssh -i ~/.ssh/dreamhost_key -p 22 "${{ secrets.DREAMHOST_USER }}@${{ secrets.DREAMHOST_HOST }}" "mkdir -p '${{ secrets.DREAMHOST_PATH }}'"
+
+      - name: Deploy
+        run: |
+          rsync -avz --delete -e "ssh -i ~/.ssh/dreamhost_key -p 22" dist/ "${{ secrets.DREAMHOST_USER }}@${{ secrets.DREAMHOST_HOST }}:${{ secrets.DREAMHOST_PATH }}/"
