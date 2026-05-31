@@ -31,11 +31,11 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.DREAMHOST_SSH_KEY }}" > ~/.ssh/deploy_key
+          echo "${{ secrets.DREAMHOST_SSH_KEY_B64 }}" | base64 -d > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -p 22 "${{ secrets.DREAMHOST_HOST }}" >> ~/.ssh/known_hosts
 
       - name: Deploy
         run: |
-          ssh -i ~/.ssh/deploy_key -p 22 "${{ secrets.DREAMHOST_USER }}@${{ secrets.DREAMHOST_HOST }}" "mkdir -p '${{ secrets.DREAMHOST_PATH }}'"
-          rsync -avz --delete -e "ssh -i ~/.ssh/deploy_key -p 22" dist/ "${{ secrets.DREAMHOST_USER }}@${{ secrets.DREAMHOST_HOST }}:${{ secrets.DREAMHOST_PATH }}/"
+          ssh -o IdentitiesOnly=yes -i ~/.ssh/deploy_key -p 22 "${{ secrets.DREAMHOST_USER }}@${{ secrets.DREAMHOST_HOST }}" "mkdir -p '${{ secrets.DREAMHOST_PATH }}'"
+          rsync -avz --delete -e "ssh -o IdentitiesOnly=yes -i ~/.ssh/deploy_key -p 22" dist/ "${{ secrets.DREAMHOST_USER }}@${{ secrets.DREAMHOST_HOST }}:${{ secrets.DREAMHOST_PATH }}/"
