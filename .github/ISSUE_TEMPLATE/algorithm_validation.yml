@@ -1,0 +1,33 @@
+name: Algorithm validation
+description: Validate or fix one algorithm
+title: "[Algorithm Validation]: "
+labels: ["algorithm-validation", "needs-maintainer-review"]
+body:
+  - type: input
+    id: algorithm
+    attributes:
+      label: Algorithm
+      placeholder: "Dijkstra, RSA, K-Means, etc."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Current behavior
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation checklist
+      value: |
+        - [ ] Logic checked
+        - [ ] Visual checked
+        - [ ] Edge cases checked
+        - [ ] npm run check passes

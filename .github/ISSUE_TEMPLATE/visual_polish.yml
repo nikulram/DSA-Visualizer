@@ -1,0 +1,17 @@
+name: Visual polish
+description: Improve UI or visualization clarity
+title: "[Visual Polish]: "
+labels: ["visual-polish"]
+body:
+  - type: input
+    id: area
+    attributes:
+      label: Area or algorithm
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What should be improved?
+    validations:
+      required: true
